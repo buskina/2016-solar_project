@@ -96,6 +96,8 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     **space_objects** — список объектов планет и звёзд
     """
     with open(output_filename, 'w') as out_file:
+        if output_filename[-4:0] != ".txt":
+            output_filename += ".txt"
         for obj in space_objects:
             print("%s %s %s %s %s %s %s %s" % (
                 obj.type, obj.R, obj.color, obj.m, obj.x, obj.y, obj.Vx, obj.Vy),
